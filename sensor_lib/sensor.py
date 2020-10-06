@@ -1,6 +1,7 @@
 import logging
 import random
 import string
+import sys
 from time import sleep
 
 from drone_data_lib.drone_command import DroneCommand
@@ -60,7 +61,7 @@ class Sensor:
 
 def main():
     com_util = HTTPComUtil()
-    sensor_driver = SensorDriverSimulator(input_file_path='../task_def/drones.txt', sleep_time_sec=0.1)
+    sensor_driver = SensorDriverSimulator(input_file_path=sys.argv[1], sleep_time_sec=2)
     sensor = Sensor(sensor_driver=sensor_driver, com_util=com_util)
     sensor.sense()
 

@@ -61,7 +61,7 @@ def sensor_shutdown():
             final_status = DroneFinalState.STAYED_ON_AIR
         drone_id = drone_history[0]
         drone_type = drone_history[1]
-        logging.info(f'drone {drone_id} of type {drone_type},'
+        logging.info(f'drone id:{drone_id}, type:{drone_type}, '
                      f'initial position:{initial_position.value}, final position:{final_position.value}, '
                      f'final stats:{final_status.value}')
     drones_resp = [(drone_tuple[0], drone_tuple[1], drone_tuple[2].value, drone_tuple[3].value)
